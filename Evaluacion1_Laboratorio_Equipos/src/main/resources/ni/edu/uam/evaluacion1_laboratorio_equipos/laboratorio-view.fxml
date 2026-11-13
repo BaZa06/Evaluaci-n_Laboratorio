@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ni.edu.uam.evaluacion1_laboratorio_equipos.controller.LaboratorioController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <children>
+        <Label text="Control de equipos de laboratorio"
+               layoutX="20.0" layoutY="15.0"
+               style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <Label text="Código:" layoutX="20.0" layoutY="65.0"/>
+        <TextField fx:id="txtCodigo"
+                   layoutX="120.0" layoutY="60.0"
+                   prefWidth="250.0"
+                   promptText="Ingrese el código"/>
+
+        <Label text="Nombre:" layoutX="400.0" layoutY="65.0"/>
+        <TextField fx:id="txtNombre"
+                   layoutX="500.0" layoutY="60.0"
+                   prefWidth="350.0"
+                   promptText="Ingrese el nombre"/>
+
+        <Label text="Marca:" layoutX="20.0" layoutY="105.0"/>
+        <TextField fx:id="txtMarca"
+                   layoutX="120.0" layoutY="100.0"
+                   prefWidth="250.0"
+                   promptText="Ingrese la marca"/>
+
+        <Label text="Cantidad:" layoutX="400.0" layoutY="105.0"/>
+        <TextField fx:id="txtCantidad"
+                   layoutX="500.0" layoutY="100.0"
+                   prefWidth="120.0"
+                   promptText="Cantidad"/>
+
+        <Label text="Tipo de equipo:" layoutX="20.0" layoutY="145.0"/>
+        <ComboBox fx:id="cmbTipoEquipo"
+                  layoutX="120.0" layoutY="140.0"
+                  prefWidth="250.0"
+                  promptText="Seleccione un tipo"/>
+
+        <Label text="Estado:" layoutX="400.0" layoutY="145.0"/>
+        <ComboBox fx:id="cmbEstado"
+                  layoutX="500.0" layoutY="140.0"
+                  prefWidth="250.0"
+                  promptText="Seleccione un estado"/>
+
+        <Button fx:id="btnGuardar"
+                text="Guardar"
+                layoutX="20.0" layoutY="190.0"
+                onAction="#guardarEquipo"/>
+
+        <Button fx:id="btnActualizar"
+                text="Actualizar"
+                layoutX="110.0" layoutY="190.0"
+                onAction="#actualizarEquipo"/>
+
+        <Button fx:id="btnEliminar"
+                text="Eliminar"
+                layoutX="220.0" layoutY="190.0"
+                onAction="#eliminarEquipo"/>
+
+        <Button fx:id="btnLimpiar"
+                text="Limpiar"
+                layoutX="310.0" layoutY="190.0"
+                onAction="#limpiarFormulario"/>
+
+        <Label text="Buscar por nombre:"
+               layoutX="20.0" layoutY="240.0"/>
+
+        <TextField fx:id="txtBuscarNombre"
+                   layoutX="150.0" layoutY="235.0"
+                   prefWidth="200.0"
+                   promptText="Parte del nombre"/>
+
+        <Label text="Filtrar por tipo:"
+               layoutX="370.0" layoutY="240.0"/>
+
+        <ComboBox fx:id="cmbFiltroTipo"
+                  layoutX="470.0" layoutY="235.0"
+                  prefWidth="180.0"
+                  promptText="Todos los tipos"/>
+
+        <Button text="Aplicar filtros"
+                layoutX="670.0" layoutY="235.0"
+                onAction="#aplicarFiltros"/>
+
+        <TableView fx:id="tablaEquipos"
+                   layoutX="20.0" layoutY="280.0"
+                   prefWidth="860.0" prefHeight="290.0"
+                   AnchorPane.leftAnchor="20.0"
+                   AnchorPane.rightAnchor="20.0"
+                   AnchorPane.bottomAnchor="20.0">
+            <columns>
+                <TableColumn fx:id="colCodigo"
+                             text="Código"
+                             prefWidth="120.0"/>
+
+                <TableColumn fx:id="colNombre"
+                             text="Nombre"
+                             prefWidth="210.0"/>
+
+                <TableColumn fx:id="colMarca"
+                             text="Marca"
+                             prefWidth="130.0"/>
+
+                <TableColumn fx:id="colEstado"
+                             text="Estado"
+                             prefWidth="160.0"/>
+
+                <TableColumn fx:id="colCantidad"
+                             text="Cantidad"
+                             prefWidth="100.0"/>
+
+                <TableColumn fx:id="colTipo"
+                             text="Tipo de equipo"
+                             prefWidth="180.0"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
